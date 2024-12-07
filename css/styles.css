@@ -433,3 +433,72 @@ hr {
   border-top: 1px solid #ccc; /* Línea divisoria */
   margin: 20px 0;
 }
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
+  /* Encabezado */
+  header h1 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Navegación */
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li a {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Contenedor Principal */
+  .section-container, #portada {
+    padding: 10px;
+  }
+
+  .portada-container, .section-content, .graficas-container, .bibliografia-container {
+    max-width: 95%; /* Ajusta el ancho al 95% del dispositivo */
+    padding: 20px;
+  }
+
+  /* Gráficas */
+  .grafica-item {
+    flex-direction: column; /* Apila la imagen y la descripción */
+    gap: 10px;
+  }
+
+  .grafica-item img {
+    max-width: 100%; /* Ajusta la imagen al ancho del dispositivo */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Encabezado */
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  /* Navegación */
+  nav ul li a {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  /* Textos */
+  .section-content p, .section-content li, .portada-container p, .portada-container ul li {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    line-height: 1.5; /* Reduce el espacio entre líneas */
+  }
+
+  /* Pie de página */
+  footer {
+    font-size: 0.8rem; /* Reduce el texto del footer */
+  }
+}
+
