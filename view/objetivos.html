@@ -1,0 +1,57 @@
+<section id="objetivos">
+    <div class="objetivos-container">
+      <h2>Objetivo</h2>
+      <p>
+        Implementar un flujo de trabajo colaborativo utilizando herramientas como Git, GitHub y GitHub Actions, para gestionar versiones y automatizar procesos en un proyecto de análisis de datos obtenido mediante técnicas de scraping en la plataforma Mercado Libre.
+      </p>
+  
+      <h3>Objetivos Específicos</h3>
+      <ul>
+        <li>Utilizar Git y GitHub como herramientas para gestionar versiones y coordinar aportes entre los integrantes del equipo de forma eficiente.</li>
+        <li>Implementar técnicas de scraping con BeautifulSoup para extraer datos relevantes de productos, como títulos y precios, desde la plataforma Mercado Libre.</li>
+        <li>Organizar y almacenar los datos extraídos en formatos estructurados como CSV y JSON, asegurando su reutilización y portabilidad en diferentes entornos.</li>
+        <li>Crear visualizaciones gráficas claras e intuitivas, como gráficos de barras y gráficos de torta, que permitan analizar patrones y tendencias en los datos recopilados.</li>
+        <li>Establecer un pipeline de CI/CD con GitHub Actions para integrar pruebas automatizadas y garantizar la calidad del código antes de su aprobación.</li>
+        <li>Documentar el flujo de trabajo DevOps implementado en un repositorio público de GitHub, proporcionando una guía completa y comprensible para posibles colaboradores.</li>
+      </ul>
+  
+      <h3>Metodología empleada de scraping</h3>
+      <p>
+        En la Evidencia de Aprendizaje 2, retomamos el proyecto iniciado en la Evidencia de Aprendizaje 1, donde se desarrollaron las bases para extraer datos de productos en Mercado Libre utilizando BeautifulSoup. En esta actividad, se amplió el alcance del proyecto implementando un flujo de trabajo colaborativo en GitHub con control de versiones y prácticas de DevOps, optimizando la eficiencia y la calidad del proceso. A continuación, se describe la metodología empleada:
+      </p>
+      <ul>
+        <li>
+          <strong>Integración de Git y GitHub en el flujo de trabajo:</strong> Se creó un repositorio en GitHub para gestionar de manera eficiente el proyecto. Cada colaborador realizó un fork del repositorio principal y trabajó en su propia rama para agregar funcionalidades específicas, como la generación de gráficos y el análisis de datos. Se implementaron pull requests para la validación y aprobación de los cambios antes de ser fusionados en la rama principal.
+        </li>
+        <li>
+          <strong>Extensión del scraping realizado en la Actividad 1:</strong> Retomando la extracción de datos sobre calzado deportivo Nike en Mercado Libre, se optimizó el proceso inicial, asegurando que los datos recopilados fueran más completos y relevantes. La configuración de los headers y la implementación de pausas en las solicitudes (<code>time.sleep(8)</code>) garantizaron un scraping más seguro y estable.
+        </li>
+        <li>
+          <strong>Almacenamiento y estructura de los datos:</strong> Los datos extraídos, que incluían títulos y precios de productos, se almacenaron en múltiples formatos:
+          <ul>
+            <li>CSV: Permitiendo un análisis más detallado con herramientas como pandas.</li>
+            <li>JSON: Asegurando la interoperabilidad para futuros usos en aplicaciones web.</li>
+            <li>HTML: Generando un catálogo de productos que presenta la información extraída en un formato visualmente atractivo.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Implementación de nuevas funcionalidades:</strong> En la Actividad 2, los colaboradores contribuyeron con nuevas funcionalidades, como:
+          <ul>
+            <li>Gráficos de barras que muestran los 10 productos más caros en orden descendente.</li>
+            <li>Gráficos de torta que ilustran la distribución porcentual de los precios.</li>
+            <li>Procesamiento de los datos en un DataFrame de pandas para facilitar la manipulación y visualización tabular.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Automatización con GitHub Actions:</strong> Se estableció un pipeline de CI/CD para garantizar la calidad del código. Las pruebas automatizadas verificaron que las modificaciones de los colaboradores fueran correctas antes de ser fusionadas. Este flujo de trabajo contribuyó a la integración continua y al despliegue seguro de los resultados.
+        </li>
+        <li>
+          <strong>Manejo de errores y evaluación de herramientas:</strong> Se implementaron controles para manejar posibles errores durante el scraping, como solicitudes fallidas o cambios en la estructura de la página. Aunque BeautifulSoup fue la herramienta principal, se consideraron alternativas como Selenium o Scrapy para futuros proyectos que involucren sitios más dinámicos.
+        </li>
+      </ul>
+      <p>
+        Este enfoque metodológico permitió extender el trabajo realizado en la Evidencia de Aprendizaje 1 hacia un desarrollo más robusto, integrando buenas prácticas de colaboración, control de versiones y análisis de datos, lo que resultó en un proyecto más completo y profesional.
+      </p>
+    </div>
+  </section>
+  
