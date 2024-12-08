@@ -1,42 +1,38 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evidencias de Aprendizaje 3</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <!-- Encabezado -->
-  <header>
-    <h1>Evidencias de Aprendizaje 3</h1>
-  </header>
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("nav ul li a");
+  const content = document.getElementById("content");
 
-  <!-- Navegación -->
-  <nav>
-    <ul>
-      <li><a href="#" data-view="portada">Portada</a></li>
-      <li><a href="#" data-view="introduccion">Introducción</a></li>
-      <li><a href="#" data-view="descripcion">Descripción de la página y artículos</a></li>
-      <li><a href="#" data-view="objetivos">Objetivos/Metodología</a></li>
-      <li><a href="#" data-view="graficas">Gráficas y Consultas</a></li>
-      <li><a href="#" data-view="resultados">Resultados y Conclusiones</a></li>
-      <li><a href="#" data-view="Codigo">Código</a></li>
-      <li><a href="#" data-view="bibliografia">Bibliografía</a></li>
-    </ul>
-  </nav>
+  // Verificar la última vista visitada almacenada en LocalStorage
+  const lastView = localStorage.getItem("lastView");
 
-  <!-- Contenido dinámico -->
-  <main id="content">
-    <p>Bienvenido a la página de evidencias de aprendizaje 3. Haz clic en las opciones del menú para navegar.</p>
-  </main>
+  if (lastView) {
+    loadView(lastView); 
+  } else {
+    loadView("portada"); 
+  }
 
-  <!-- Pie de página -->
-  <footer>
-    <p>IU DIGITAL - EVIDENCIA 3 - DICIEMBRE</p>
-  </footer>
+  
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const view = link.getAttribute("data-view");
+      localStorage.setItem("lastView", view); 
+      loadView(view);
+    });
+  });
 
-  <!-- Scripts -->
-  <script src="js/app.js"></script>
-</body>
-</html>
+  
+  function loadView(view) {
+    fetch(`view/${view}.html`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Vista no encontrada");
+        return response.text();
+      })
+      .then((html) => {
+        content.innerHTML = html;
+      })
+      .catch(() => {
+        content.innerHTML = "<p>Error al cargar la vista. Por favor, verifica el archivo.</p>";
+      });
+  }
+});
